@@ -297,7 +297,7 @@
   width: 100%;
 }
 
-.wrapper__content {
+.wrapper {
   display: flex;
   justify-content: space-around;
   gap: 15px;
@@ -305,7 +305,7 @@
 }
 
 @media (min-width: 590px) and (max-width: 1200px) {
-  .wrapper__content {
+  .wrapper {
     margin: 0 auto;
     flex-direction: column;
     gap: 15px;
@@ -313,7 +313,7 @@
 }
 
 @media (max-width: 580.5px) {
-  .wrapper__content {
+  .wrapper {
     flex-direction: column;
   }
 }
