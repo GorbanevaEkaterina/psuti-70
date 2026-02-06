@@ -191,28 +191,28 @@
   height: 30px;
   border-radius: 50%;
   background: radial-gradient(ellipse at center,
-      rgba(247, 237, 130, 0.5) 0%,
-      rgba(247, 237, 130, 0) 70%);
+  rgba(30, 130, 202, 0.5) 0%,
+  rgba(30, 130, 202, 0) 70%);
   z-index: -1;
   animation: pulseYellowGlow 3s ease-in-out infinite;
 }
 
 @keyframes pulseYellowShadow {
-
-  0%,
+0%,
   100% {
     box-shadow:
-      0 8px 20px rgba(247, 237, 130, 0.3),
-      0 15px 35px rgba(247, 237, 130, 0.2);
+      0 8px 20px rgba(30, 130, 202, 0.3),
+      0 15px 35px rgba(30, 130, 202, 0.2);
   }
 
   50% {
     box-shadow:
-      0 12px 30px rgba(247, 237, 130, 0.6),
-      0 25px 50px rgba(247, 237, 130, 0.5),
-      0 0 40px rgba(247, 237, 130, 0.4);
+      0 12px 30px rgba(30, 130, 202, 0.6),
+      0 25px 50px rgba(30, 130, 202, 0.5),
+      0 0 40px rgba(30, 130, 202, 0.4);
   }
 }
+
 
 @keyframes pulseYellowGlow {
 
