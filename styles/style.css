@@ -141,7 +141,7 @@
 .congratulation,
 .alumnimeeting,
 .celebration {
-  width: 320px;
+  width: 350px;
   height: 380px;
   border-radius: 30px;
   padding: 20px 30px 20px;
@@ -230,15 +230,14 @@
 
 .congratulation__header,
 .alumnimeeting__header,
-.celebration__header,
-.image-title {
+.celebration__header{
   display: flex;
   text-align: center;
   justify-content: space-around;
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 400;
-  color: black;
+  color: #0a3966;
   line-height: 0.83;
   margin-bottom: 25px;
   margin-top: 25px;
@@ -255,22 +254,25 @@
 .content__list_item {
   display: flex;
   flex-direction: column;
+  font-size: 15px;
 }
 
 @media (min-width: 590px) and (max-width: 1200px) {
   .content__list_item {
     padding: 0 40px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 580.5px) {
   .content__list_item {
     padding: 0 20px;
+    font-size: 12px;
   }
 }
 
 .congratulation__content_link {
-  color: black;
+  color: #0a3966;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -279,8 +281,19 @@
 }
 
 .congratulation__content_link:hover {
-  color: #fee42a;
+  color: #d9b504;
 }
+.congratulation__content_link:focus {
+  outline: 2px solid #0a3966; 
+  outline-offset: 2px;
+  border-bottom-color: #0a3966;
+  color: #0a3966; 
+  
+}
+
+.congratulation__content_link:active {
+  color: #072a4d;
+  }
 
 .congratulation__content_link::after {
   content: "";
@@ -297,7 +310,7 @@
   width: 100%;
 }
 
-.wrapper {
+.wrapper-1 {
   display: flex;
   justify-content: space-around;
   gap: 15px;
@@ -305,7 +318,7 @@
 }
 
 @media (min-width: 590px) and (max-width: 1200px) {
-  .wrapper {
+  .wrapper-1 {
     margin: 0 auto;
     flex-direction: column;
     gap: 15px;
@@ -313,7 +326,7 @@
 }
 
 @media (max-width: 580.5px) {
-  .wrapper {
+  .wrapper-1 {
     flex-direction: column;
   }
 }
@@ -325,7 +338,7 @@
   grid-template-columns: 1fr;
   margin: 0 auto;
   max-width: 1200px;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 @media (min-width: 590px) and (max-width: 1200px) {
@@ -342,6 +355,18 @@
     grid-template-columns: 1fr;
     margin: 0;
   }
+}
+.image-title {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-family: "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #0a3966;
+  line-height: 0.83;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .images-wrapper {
@@ -374,6 +399,14 @@
   block-size: 100%;
   inline-size: 100%;
 }
+.visual-images:hover {
+ outline: 3px solid #0a3966;
+ transition: all 0.3s ease;
+}
+.visual-images:focus {
+ outline: 3px solid #0a3966;
+ transition: all 0.3s ease;
+}
 
 .visual__item:first-child,
 .visual__item:last-child {
@@ -385,6 +418,7 @@
   grid-row-start: span 2;
 }
 
+
 .print {
   display: flex;
   flex-direction: column;
@@ -395,7 +429,7 @@
 
 .print__title {
   font-family: "Inter", sans-serif;
-  font-style: bold;
+  text-align: center;
   font-weight: 400;
   line-height: 0.83;
   color: #0a3966;
