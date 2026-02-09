@@ -148,12 +148,11 @@
   background-color: white;
   margin-top: 25px;
   position: relative;
-
+  font-size: 16px;
   box-shadow:
    0 8px 20px rgba(178, 216, 241, 0.4),
     0 15px 35px rgba(178, 216, 241, 0.3),
     0 0 25px rgba(178, 216, 241, 0.2);
-
   animation: pulseYellowShadow 3s ease-in-out infinite;
 }
 
@@ -489,13 +488,13 @@
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  width: 1000px;
+  max-width: 1000px;
+  width: 100%;
   max-height: 1500px;
   height: 100%;
   border-radius: 30px;
   padding: 40px;
-  font-size: 14px;
-  text-align: center;
+  font-size: 16px;
   font-style: italic;
   position: relative;
   box-shadow:
@@ -549,7 +548,7 @@
 }
 
 .card__text {
-  font-size: 12px;
+  font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   
 }
@@ -560,14 +559,24 @@
   align-items: flex-end;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
+  font-size: 16px;
 }
 
 .card__author-name {
-  color: #0a3966;
-  font-weight: 300;
-  font-style: normal;
+    display: flex;
+    max-width: 850px;
+    width: 100%;
+    color: #0a3966;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: flex-start;
+    font-size: 16px;
 }
 
 .card__author-position {
-  font-size: 11px;
+   display: flex;
+   justify-content: flex-start;
+    max-width: 850px;
+    width: 100%;
+  font-size: 16px;
 }
