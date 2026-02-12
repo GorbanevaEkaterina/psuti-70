@@ -580,9 +580,75 @@
   font-size: 16px;
 }
 
+.admin-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
+  transition: all 0.3s;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(30, 60, 114, 0.6);
+}
+
+.admin-btn svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
 .add-greeting-container {
   text-align: center;
   margin: 30px 0 40px;
+  display: none;
+}
+
+.admin-mode .add-greeting-container {
+  display: block;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(229, 62, 62, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.delete-icon svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.delete-icon:hover {
+  background: rgba(197, 48, 48, 0.95);
+  transform: scale(1.1);
+}
+
+.admin-mode .delete-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-greeting-btn {
@@ -743,6 +809,18 @@
 }
 
 @media (max-width: 768px) {
+  .admin-btn {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .admin-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
   .modal-content {
     padding: 25px;
     margin: 15px;
@@ -759,6 +837,21 @@
 }
 
 @media (max-width: 480px) {
+  .admin-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .delete-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .delete-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
   .modal-content {
     padding: 20px;
   }
@@ -778,4 +871,14 @@
     padding: 12px 24px;
     font-size: 15px;
   }
+}
+
+
+#logoutBtn {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  margin-top: 15px;
+}
+
+#logoutBtn:hover {
+  background: linear-gradient(135deg, #c53030 0%, #9b2c2c 100%);
 }

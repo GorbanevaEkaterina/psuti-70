@@ -18,6 +18,11 @@
 <body class="page">
   <header class="header">
     <h1 class="header__title">70-летие ПГУТИ</h1>
+    <button id="adminBtn" class="admin-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+    </button>
   </header>
   <main class="main">
     <section class="history">
@@ -348,32 +353,48 @@
             </div>
           </article>
         </li>
-        <template></template>
+
       </ul>
     </section>
-
+    <template></template>
 
   </main>
+  <div id="authModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="authModalTitle">Администрирование</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <label for="password" id="passwordLabel">Пароль:</label>
+        <input type="password" id="password" class="modal-input" placeholder="Введите пароль">
+        <div id="authError" class="modal-error"></div>
+        <button id="authSubmit" class="modal-submit">Войти</button>
+        <button id="logoutBtn" class="modal-submit" style="display: none;">Выйти</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="deleteConfirmModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Подтверждение удаления</h3>
+        <button class="modal-close delete-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Вы уверены, что хотите удалить это поздравление?</p>
+        <div style="display: flex; gap: 10px; align-self: flex-end; margin-top: 20px;">
+          <button id="cancelDelete" class="modal-submit" style="background: #e53e3e;">Отмена</button>
+          <button id="confirmDelete" class="modal-submit">Удалить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="add-greeting-container">
     <button id="addGreetingBtn" class="add-greeting-btn">
       + Добавить поздравление
     </button>
-  </div>
-
-  <div id="authModal" class="modal-overlay">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Аутентификация</h3>
-        <button class="modal-close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p>Для добавления поздравления требуется подтверждение</p>
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" class="modal-input" placeholder="Введите пароль">
-        <div id="authError" class="modal-error"></div>
-        <button id="authSubmit" class="modal-submit">Войти</button>
-      </div>
-    </div>
   </div>
 
   <div id="greetingForm" class="modal-overlay">
