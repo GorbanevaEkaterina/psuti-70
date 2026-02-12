@@ -9,7 +9,6 @@
   <title>70-летие ПГУТИ</title>
   <link rel="stylesheet" href="./fonts/fonts.css" />
   <link rel="icon" href="./images/favicon.ico" sizes="any" />
-  <!-- <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" /> -->
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="./styles/globals.css" />
   <link rel="stylesheet" href="./styles/style.css" />
@@ -60,7 +59,8 @@
         <ul class="congratulation__content_list">
           <li class="content__list_item">Просим наших выпускников, сотрудников, представителей компаний-партнеров,
             государственных структур и ведомств оставить свои поздравления и добрые слова в адрес вуза, заполнив <a
-              class="congratulation__content_link" href="https://forms.yandex.ru/u/69317e80493639fb8a767188/">следующую
+              target="_blank" class="congratulation__content_link"
+              href="https://forms.yandex.ru/u/69317e80493639fb8a767188/">следующую
               форму.</a></li>
           <li class="content__list_item">Ваши пожелания и поздравления будут опубликованы на странице 70-летия и будут
             использованы для создания мультимедийного контента.</li>
@@ -73,7 +73,7 @@
           <li class="content__list_item">Встреча выпускников вуза в юбилейном году состоится 20 июня 2026 года. Встреча
             будет организована в двух корпусах: корпусе №1 по адресу Льва Толстого, 23 и в корпусе №2 по адресу
             Московское шоссе, 77. Чтобы быть в курсе событий вступайте в Ассоциацию выпускников КЭИС-ПИИРС-ПГАТИ-ПГУТИ
-            на <a class="congratulation__content_link"
+            на <a target="_blank" class="congratulation__content_link"
               href="https://www.psuti.ru/ru/university/associaciya-vypusknikov">этой странице.</a></li>
         </ul>
 
@@ -98,28 +98,29 @@
           празднования.</li>
       </ul>
       <ul class="images-wrapper">
-        <li class="visual__item"><a class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
+        <li class="visual__item"><a target="_blank" class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
             <img loading="lazy" src="./images/1.jpg" alt="юбилей 50 лет" class="visual-images" /></a>
         </li>
-        <li class="visual__item"><a class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
+        <li class="visual__item"><a target="_blank" class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
             <img loading="lazy" src="./images/pguti_1_korpus.jpg" alt="1 корпус ПГУТИ" class="visual-images" /></a>
         </li>
-        <li class="visual__item"><a class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
+        <li class="visual__item"><a target="_blank" class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
             <img loading="lazy" src="./images/3.jpg" alt="юбилей 50 лет" class="visual-images" /></a>
         </li>
-        <li class="visual__item"><a class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
+        <li class="visual__item"><a target="_blank" class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
             <img loading="lazy" src="./images/corp2.jpg" alt="2 корпус ПГУТИ" class="visual-images" /></a>
         </li>
-        <li class="visual__item"><a class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
+        <li class="visual__item"><a target="_blank" class="img-link" href="https://disk.yandex.ru/d/tv_NT5FJs0yGzw">
             <img loading="lazy" src="./images/2.jpg" alt="50 лет ПГУТИ" class="visual-images" /></a>
         </li>
       </ul>
     </section>
     <section class="print">
       <h2 class="print__title">ПОЗДРАВЛЕНИЯ С 70-ЛЕТИЕМ</h2>
-      <p class="print__subtitle">(В этом разделе отображаются поздравления поступившие через онлайн <a
+      <p class="print__subtitle">(В этом разделе отображаются поздравления поступившие через онлайн <a target="_blank"
           class="congratulation__content_link" href="https://forms.yandex.ru/u/69317e80493639fb8a767188/">форму</a> или
-        на электронную <a class="congratulation__content_link" href="mailto:info@psuti.ru">почту</a> вуза)</p>
+        на электронную <a target="_blank" class="congratulation__content_link" href="mailto:info@psuti.ru">почту</a>
+        вуза)</p>
       <ul class="cards-list">
         <li>
           <article class="card card_theme_dark">
@@ -347,11 +348,74 @@
             </div>
           </article>
         </li>
+        <template></template>
       </ul>
     </section>
 
-  </main>
 
+  </main>
+  <div class="add-greeting-container">
+    <button id="addGreetingBtn" class="add-greeting-btn">
+      + Добавить поздравление
+    </button>
+  </div>
+
+  <div id="authModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Аутентификация</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Для добавления поздравления требуется подтверждение</p>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" class="modal-input" placeholder="Введите пароль">
+        <div id="authError" class="modal-error"></div>
+        <button id="authSubmit" class="modal-submit">Войти</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="greetingForm" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Новое поздравление</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="greetingFormContent">
+          <div class="form-group">
+            <label for="name">ФИО *</label>
+            <input type="text" id="name" class="modal-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Год выпуска *</label>
+            <input type="number" id="year" class="modal-input" min="1956" max="2026" required>
+          </div>
+
+          <div class="form-group">
+            <label for="position">Должность *</label>
+            <input type="text" id="position" class="modal-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Компания / Организация</label>
+            <input type="text" id="company" class="modal-input">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Текст поздравления *</label>
+            <textarea id="message" class="modal-textarea" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="modal-submit">Отправить поздравление</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./scripts/script.js"></script>
 </body>
 
 </html>
